@@ -56,8 +56,8 @@ function assert(expression, failureMessage) {
  zoo-themed.  Make one pass and one fail. In the failure message, describe why
  it failed.
 */
-
-//your code goes here
+assert('hippos' === 'hippos');
+assert('koala' === 'birds', 'Birds are dumb.');
 
 /* ----------------- Meerkats -------------------------------------------------
  Meerkats make a sort of chirping noise (according to my 30 seconds of
@@ -74,8 +74,37 @@ var sentence2 = 'Come over here so you can scratch my belly.';
  Use **two** different kinds of loops to implement this. (10 points each.)
  HINT: the 'split' method on String will be useful.
 */
+var sentence1 = 'More food please.';
+var newSentence1 = ' ';
+var oneSplit = sentence1.split(' ');
+var oneSplitLength = oneSplit.length;
 
-// your code goes here
+for (i = 0; i < oneSplitLength; i++) {
+  if (i < oneSplitLength - 1) {
+    newSentence1 = newSentence1 + 'chirp';
+  }
+  else if (i === oneSplitLength) {
+    newSentence1 = newSentence1 + 'chirp.';
+  }
+}
+sentence1 = newSentence1;
+
+var sentence2 = 'Come over here so you can scratch my belly.';
+var newSentence2 = ' ';
+var twoSplit = sentence2.split(' ');
+var twoSplitLength = twoSplit.length;
+var i = 0;
+
+while (i < twoSplitLength) {
+  if (i < twoSplitLength - 1) {
+    newSentence2 = newSentence2 + 'chirp';
+  }
+  else if (i === twoSplitLength) {
+    newSentence2 = newSentence2 + 'chirp.';
+  }
+  i++;
+}
+sentence2 = newSentence2;
 
 assert(sentence1 === 'chirp chirp chirp.', 'sentence 1 should have 3 chirps');
 assert(sentence2 === 'chirp chirp chirp chirp chirp chirp chirp chirp chirp.',
@@ -94,7 +123,9 @@ var nextAnimal;
 // TODO: 10 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
 
-// your code goes here
+var bestAnimal = favoriteAnimals.length;
+var animal = Math.floor((Math.random() * bestAnimal) + 1);
+nextAnimal = favoriteAnimals[animal];
 
 assert(nextAnimal, 'assign something to nextAnimal');
 
@@ -109,10 +140,10 @@ assert(nextAnimal, 'assign something to nextAnimal');
 // don't require quotes for the code to work. Remove the unnecessary quotes.
 
 var animalExhibitStats = {
-  'numberOpen': 13,
+  numberOpen: 13,
   'number closed': 2,
   'petting-zoo-open': true,
-  'mostPopular': 'Lucky the Emperor Penguin',
+  mostPopular: 'Lucky the Emperor Penguin',
   '2ndMostPopular': 'Dumbo the Depressed Donkey'
 };
 
@@ -123,7 +154,7 @@ var animalExhibitStats = {
  notation with dot notation wherever possible.
 */
 
-assert(animalExhibitStats['numberOpen'] === 13, 'there should be 13 open exhibits');
+assert(animalExhibitStats.numberOpen === 13, 'there should be 13 open exhibits');
 assert(animalExhibitStats['number closed'] === 2, 'there should be 2 closed exhibits');
 assert(animalExhibitStats['petting-zoo-open'], 'hey! =( i was promised meerkats!');
 assert(animalExhibitStats['2ndMostPopular'] === 'Dumbo the Depressed Donkey',
@@ -133,7 +164,7 @@ assert(animalExhibitStats['2ndMostPopular'] === 'Dumbo the Depressed Donkey',
 // Write an assert about the 'mostPopular' property of animalExibitStats.
 // Use the above examples to guide you.
 
-// your assert goes here
+assert(animalExhibitStats.mostPopular === 'Lucky the Emperor Penguin');
 
 /* ----------------- Code Style ----------------------------------------
  TODO: 10 points
